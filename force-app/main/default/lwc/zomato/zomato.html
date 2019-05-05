@@ -1,28 +1,21 @@
 <template>
-    <lightning-card  variant="Narrow"  title="Find Resturaunts" icon-name="standard:account">
-        <p class="slds-p-horizontal_small"> Enter location Details</p>
-        <lightning-layout>
-            <lightning-layout-item size="6" padding="around-small">
-                <div class="header-column">
-                        <lightning-input 
-                            type="search" 
-                            placeholder="Enter location" 
-                            onchange={handleLocationChange}> 
-                            value={searchKey} 
-                        </lightning-input></br>
+    <lightning-card title="Enter Location" icon-name="standard:location">
 
-                        <template if:true={location.data}>
-                            <template for:each={location.data} for:item="contact">
-                                <p key={location.Id}>{location.Name}</p>
-                            </template>
+            <lightning-layout>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <div class="header-column">
+                            <lightning-input label="Location" value={location} onchange={handleLocationChange}></lightning-input></br>
+                                <lightning-button label="Select Location" onclick={selectLocation}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                   <lightning-layout-item size="6" padding="around-small" >
+                        <template if:true={selectedLocation}>  
+                                <lightning-input label="Location Selected" value={selectedLocation} readonly onchange={handleLocationChange}></lightning-input></br> 
+                                <lightning-button label="Search Restaurants" onclick={searchRestaurant}></lightning-button> 
                         </template>
-
-                        <!--<lightning-button label="Select Location"></lightning-button> --> </br> </br>  
-                </div>
-                <div class="header-column">
-                    <lightning-input label="Location Selected" readonly></lightning-input></br>
-                </div>
-            </lightning-layout-item>
-        </lightning-layout>
+                   </lightning-layout-item>
+                </lightning-layout>
     </lightning-card>
 </template>

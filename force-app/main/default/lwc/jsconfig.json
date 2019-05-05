@@ -2,8 +2,17 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
             "c/zomato": [
                 "zomato/zomato.js"
+            ],
+            "c/zomatoCarousel": [
+                "zomatoCarousel/zomatoCarousel.js"
+            ],
+            "c/zomatoDisplayRestaurants": [
+                "zomatoDisplayRestaurants/zomatoDisplayRestaurants.js"
             ]
         },
         "experimentalDecorators": true

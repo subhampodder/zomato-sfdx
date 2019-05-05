@@ -12,7 +12,7 @@ global class ZomatoClass {
         // Instantiate a new http object
         Http h = new Http();
         String url = 'https://developers.zomato.com/api/v2.1/locations';
-        url += '?query='+locationName;
+        url += '?query='+locationName.deleteWhitespace();
         
         // Instantiate a new HTTP request, specify the method (GET) as well as the endpoint
         HttpRequest req = new HttpRequest();
@@ -49,7 +49,7 @@ global class ZomatoClass {
     }
     
     
-   /* @AuraEnabled
+    @AuraEnabled
     public static String searchRestaurants(string entityId, string entityType, string searchTerm) {   
         string reponse;
         System.debug('Data::::'+ entityId+''+entityType+''+searchTerm);
@@ -65,7 +65,7 @@ global class ZomatoClass {
         HttpRequest req = new HttpRequest();
         req.setEndpoint(url);
         req.setHeader('Content-Type', 'application/json');
-        req.setHeader('user-key', '3e8b235d70f0a4e7f0e5e6feebc29dd0');
+        req.setHeader('user-key', '01f78b525bb10b784bca3df514f66019');
         req.setMethod('GET');
         
         // Send the request, and return a response
@@ -93,5 +93,5 @@ global class ZomatoClass {
         }
         String restaurantString = System.JSON.serialize(restaurantsList);
         return restaurantString;
-    } */
+    } 
 }
