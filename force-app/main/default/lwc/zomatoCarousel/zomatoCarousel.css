@@ -1,0 +1,5 @@
+.slds-carousel__image {
+    width: 100;
+    image-orientation: 50turn;
+    background-image: -moz-repeating-radial-gradient()
+}
