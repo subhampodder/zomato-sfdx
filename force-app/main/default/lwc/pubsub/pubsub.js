@@ -29,7 +29,7 @@ const registerListener = (eventName, callback, thisArg) => {
             'pubsub listeners need a "@wire(CurrentPageReference) pageRef" property'
         );
     }
-
+	//check eventName
     if (!events[eventName]) {
         events[eventName] = [];
     }
