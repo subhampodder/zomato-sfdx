@@ -17,7 +17,7 @@ const samePageRef = (pageRef1, pageRef2) => {
 };
 
 /**
- * Registers a callback for an event
+ * Registers a calback for an event
  * @param {string} eventName - Name of the event to listen for.
  * @param {function} callback - Function to invoke when said event is fired.
  * @param {object} thisArg - The value to be passed as the this parameter to the callback function is bound.
