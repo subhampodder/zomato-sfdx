@@ -20,7 +20,7 @@ const samePageRef = (pageRef1, pageRef2) => {
  * Registers a calback for an event
  * @param {string} eventName - Name of the event to listen for.
  * @param {function} callback - Function to invoke when said event is fired.
- * @param {object} thisArg - The value to be passed as the this parameter to the callback function is bound.
+ * @param {object} thisArg - The value to be passed as the this parameter to the callback function s bound.
  */
 const registerListener = (eventName, callback, thisArg) => {
     // Checking that the listener has a pageRef property. We rely on that property for filtering purpose in fireEvent()
