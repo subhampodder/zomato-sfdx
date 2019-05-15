@@ -22,7 +22,6 @@ export default class ZomatoDisplayRestaurants extends LightningElement {
         //console.log('In handleRestaurants in ZomatoDisplayRestaurants');
         //console.log('restaurants in handle', restaurants);
         //const output001 = JSON.parse(restaurants);
-        //console.log('output001', output001);
         this.restaurantsList = restaurants;
         //console.log('this.restaurantsList', this.restaurantsList);
     }
