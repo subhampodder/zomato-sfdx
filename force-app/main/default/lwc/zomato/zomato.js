@@ -91,13 +91,7 @@ export default class Zomato extends LightningElement {
         .catch(error => {
             this.message = undefined;
             this.error = error;
-            /*this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Error creating record',
-                    message: error.body.message,
-                    variant: 'error',
-                }),
-            );*/
+            
             console.log("error", JSON.stringify(this.error));
         });
     }
