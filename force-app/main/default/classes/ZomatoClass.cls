@@ -94,4 +94,45 @@ global class ZomatoClass {
         String restaurantString = System.JSON.serialize(restaurantsList);
         return restaurantString;
     } 
+
+    @AuraEnabled
+    public static String searchReviews(String resId){
+        String reponse;
+        List<ZomatoReview.user_reviews> reviewList = new List<ZomatoReview.user_reviews>();
+
+         // Instantiate a new http object
+        Http h = new Http();
+        String url = 'https://developers.zomato.com/api/v2.1/reviews';
+        url += '?res_id='+ resId;
+
+         // Instantiate a new HTTP request, specify the method (GET) as well as the endpoint
+        HttpRequest req = new HttpRequest();
+        req.setEndpoint(url);
+        req.setHeader('Content-Type', 'application/json');
+        req.setHeader('user-key', '01f78b525bb10b784bca3df514f66019');
+        req.setMethod('GET');
+
+        // Send the request, and return a response
+        HttpResponse res = h.send(req);
+        system.debug('response:::::'+res.getBody());
+        reponse = res.getBody();
+        if(res.getStatusCode() == 200){
+            system.debug('Status::::::::'+res.getStatus());
+
+            ZomatoReview jsonApex = ZomatoReview.parse(res.getBody());
+            
+            system.debug('jsonApex::::::'+jsonApex);
+
+            for(ZomatoReview.user_reviews reviews : jsonApex.user_reviews){
+                //System.debug('reviews:::::'+reviews.user_reviews.rating);
+                reviewList.add(reviews);
+            }
+
+            system.debug('reviewList::::'+reviewList);
+
+        }
+
+        String reviewString = System.JSON.serialize(reviewList);
+        return reviewString;
+    }
 }

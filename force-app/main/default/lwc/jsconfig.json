@@ -8,10 +8,10 @@
             "c/zomato": [
                 "zomato/zomato.js"
             ],
-            "c/zomatoCarousel": [
+            "c/zomato-carousel": [
                 "zomatoCarousel/zomatoCarousel.js"
             ],
-            "c/zomatoDisplayRestaurants": [
+            "c/zomato-display-restaurants": [
                 "zomatoDisplayRestaurants/zomatoDisplayRestaurants.js"
             ]
         },

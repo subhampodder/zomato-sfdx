@@ -1,8 +1,10 @@
 import { LightningElement, wire, track} from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import { registerListener, unregisterAllListeners } from 'c/pubsub';
+import { fireEvent } from 'c/pubsub';
 
 export default class ZomatoDisplayRestaurants extends LightningElement {
+    selectedRes = '';
 
     @track restaurantsList = [];
 
@@ -27,11 +29,25 @@ export default class ZomatoDisplayRestaurants extends LightningElement {
     }
 
     handleRestaurantSelected(event) {
-        this.restaurantSelected = event.target.value;
+        this.restaurantSelected = event.target.dataset.id;
+        console.log('++++  ',this.restaurantSelected);
+        //console.log('reslist  ',this.restaurantsList);
         //console.log('event.type', event.type);
         //console.log('event.target.value', event.target.value);
-        //console.log('event.target', JSON.stringify(event.target));
-       // console.log('event.currentTarget', JSON.stringify(event.currentTarget));
-       // console.log('this.restaurantSelected', this.restaurantSelected);
+        console.log('event.target', JSON.stringify(this.restaurantSelected));
+        //console.log('event.currentTarget', JSON.stringify(event.currentTarget));
+        //console.log('this.restaurantSelected', this.restaurantSelected);
+        if(this.restaurantSelected !== undefined){
+            fireEvent(this.pageRef, 'restaurantIdUpdate', this.restaurantSelected);
+        }
+        else {
+            console.log("No info returned in call back select");
+        }
+    }
+
+    handleRestaurauntClick(event) {
+        console.log('inside click');
+        this.selectedRes = event.target.value;
+
     }
 }
