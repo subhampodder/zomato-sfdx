@@ -7,7 +7,7 @@ import { CurrentPageReference } from 'lightning/navigation';
 export default class ZomatoSelectedRes extends LightningElement {
     resid;
 
-    @track review;
+    @track review = [];
     @wire(CurrentPageReference) pageRef;
 
     connectedCallback() {
@@ -31,24 +31,18 @@ export default class ZomatoSelectedRes extends LightningElement {
             .then(result => {
                 const output = JSON.parse(result);
                 this.error = undefined
-                console.log("Location::::", output);
+                console.log("revws::::", output);
                 this.review = output;
+                console.log('revieww : ::: ',this.review)
             })
             .catch(error => {
                 this.message = undefined;
                 this.error = error;
-                /*this.dispatchEvent(
-                    new ShowToastEvent({
-                        title: 'Error creating record',
-                        message: error.body.message,
-                        variant: 'error',
-                    }),
-                );*/
                 console.log("error", JSON.stringify(this.error));
             });
         }
         else{
-            console.log("No info returned in call back in selectLocation method");
+            console.log("No info returned in call back");
         }
     }
 }

@@ -1,17 +1,19 @@
 <template>
-    <lightning-card title="Restaurant Review" icon-name="custom:custom109" >
-            <ul class="slds-has-dividers_bottom-space">
+    <template if:true={review}>
+        <lightning-card title="Restaurant Review" icon-name="custom:custom109" >   
+        <ul class="slds-has-dividers_bottom-space">
                     <template for:each={review} for:item='rev'>
-                            <li  key={rev.review.id} class="slds-item" value={rev} >
+                        <li  key={rev.review.id} class="slds-item" value={rev} >
                                     <lightning-tile label={rev.reviews_start} href="javascript:void(0)" type="media" >
-                                         <lightning-avatar slot="media" src={rev.review.review_text} fallback-icon-name="standard:person_account" alternative-text={rev.review.review_text}></lightning-avatar>
+                                         <lightning-avatar slot="media" src={rev.review.user.profile_image} fallback-icon-name="standard:person_account" alternative-text={rev.review.user.name}></lightning-avatar>
                                         <ul class="slds-list_horizontal slds-has-dividers_right">
-                                            <li class="slds-item">{rev.review.review_text} . {rev.review.user_rating.rating}</li>
-                                            <li class="slds-item">{rev.review.timestamp}</li>
-                                        </ul> 
+                                            <li class="slds-item">{rev.review.review_text}</li>
+                                            <li class="slds-item">{rev.review.rating}<span>&#9733;</span></li>
+                                        </ul>
                                     </lightning-tile>
                             </li>
                     </template>
             </ul>
     </lightning-card>
+    </template>
 </template>

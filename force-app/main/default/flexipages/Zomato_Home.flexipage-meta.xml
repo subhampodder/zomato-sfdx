@@ -8,6 +8,9 @@
         <componentInstances>
             <componentName>zomato</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>zomatoSelectedRes</componentName>
+        </componentInstances>
         <name>region2</name>
         <type>Region</type>
     </flexiPageRegions>

@@ -8,11 +8,14 @@
             "c/zomato": [
                 "zomato/zomato.js"
             ],
-            "c/zomato-carousel": [
+            "c/zomatoCarousel": [
                 "zomatoCarousel/zomatoCarousel.js"
             ],
-            "c/zomato-display-restaurants": [
+            "c/zomatoDisplayRestaurants": [
                 "zomatoDisplayRestaurants/zomatoDisplayRestaurants.js"
+            ],
+            "c/zomatoSelectedRes": [
+                "zomatoSelectedRes/zomatoSelectedRes.js"
             ]
         },
         "experimentalDecorators": true
