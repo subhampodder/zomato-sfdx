@@ -1,3 +1,4 @@
+//container class for zomato location response
 public class ZomatoLocation {
 
     public List<Location_suggestions> location_suggestions;
