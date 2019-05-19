@@ -4,6 +4,7 @@
 
 package.xml
 AppSwitcher.appMenu
+zomatoCarousel
 
 # LWC configuration files
 **/jsconfig.json
