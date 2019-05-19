@@ -124,7 +124,6 @@ global class ZomatoClass {
             system.debug('jsonApex::::::'+jsonApex);
 
             for(ZomatoReview.user_reviews reviews : jsonApex.user_reviews){
-                //System.debug('reviews:::::'+reviews.user_reviews.rating);
                 reviewList.add(reviews);
             }
 
