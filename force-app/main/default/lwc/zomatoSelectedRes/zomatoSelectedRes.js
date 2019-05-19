@@ -22,7 +22,6 @@ export default class ZomatoSelectedRes extends LightningElement {
     handleResId(restaurauntId) {
         //console.log('In handleRestaurants in ZomatoDisplayRestaurants');
         //console.log('restaurants in handle', restaurants);
-        //const output001 = JSON.parse(restaurants);
         this.resid = restaurauntId;
         console.log('this.restaurauntId', this.resid);
 
