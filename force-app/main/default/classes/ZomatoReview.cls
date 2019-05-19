@@ -1,3 +1,4 @@
+//container class for zomato reviews respomnse
 public class ZomatoReview {
 
 	public class User {

@@ -1,3 +1,4 @@
+//container class for zomato search response
 public class ZomatoSearch {
 
     public Integer results_found;
