@@ -7,7 +7,7 @@ AppSwitcher.appMenu
 
 # LWC configuration files
 **/jsconfig.json
-**/.eslintrc.jso
+**/.eslintrc.json
 
 # LWC Jest
 **/__tests__/**
